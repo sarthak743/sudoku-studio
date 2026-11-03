@@ -1,0 +1,211 @@
+[
+    {
+        "id": "EC001",
+        "description": "Classic valid puzzle (30 clues) with exactly one solution",
+        "grid": "530070000600195000098000060800060003400803001700020006060000280000419005000080079",
+        "expected_status": "unique",
+        "expected_solution_count": 1,
+        "count_type": "exact"
+    },
+    {
+        "id": "EC002",
+        "description": "Duplicate 7 in row 0 only (cols 2 and 4, different boxes; no column or box conflict)",
+        "grid": "537070000600195000098000060800060003400803001700020006060000280000419005000080079",
+        "expected_status": "invalid",
+        "expected_solution_count": null,
+        "count_type": "not_applicable"
+    },
+    {
+        "id": "EC003",
+        "description": "Already solved: complete grid, all rules satisfied",
+        "grid": "534678912672195348198342567859761423426853791713924856961537284287419635345286179",
+        "expected_status": "already_solved",
+        "expected_solution_count": 1,
+        "count_type": "exact"
+    },
+    {
+        "id": "EC004",
+        "description": "Complete grid with one wrong cell: duplicate 6 in row 7, column 8 and box 8",
+        "grid": "534678912672195348198342567859761423426853791713924856961537284287419636345286179",
+        "expected_status": "invalid",
+        "expected_solution_count": null,
+        "count_type": "not_applicable"
+    },
+    {
+        "id": "EC005",
+        "description": "Valid givens (no duplicates) but no solution: classic puzzle with cell 2 changed from 0 to 1",
+        "grid": "531070000600195000098000060800060003400803001700020006060000280000419005000080079",
+        "expected_status": "unsolvable",
+        "expected_solution_count": 0,
+        "count_type": "exact"
+    },
+    {
+        "id": "EC006",
+        "description": "Empty grid: astronomically many solutions; counting cannot finish, so the deadline must stop it",
+        "grid": "000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "expected_status": "multiple",
+        "expected_solution_count": 16,
+        "count_type": "lower_bound",
+        "deadline_ms": 1000
+    },
+    {
+        "id": "EC007",
+        "description": "Near-empty grid (only 3 and 4 in row 0): astronomically many solutions; deadline stops the count",
+        "grid": "034000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "expected_status": "multiple",
+        "expected_solution_count": 16,
+        "count_type": "lower_bound",
+        "deadline_ms": 1000
+    },
+    {
+        "id": "EC008",
+        "description": "Nearly complete: solved grid with one cell emptied; exactly one solution",
+        "grid": "034678912672195348198342567859761423426853791713924856961537284287419635345286179",
+        "expected_status": "unique",
+        "expected_solution_count": 1,
+        "count_type": "exact"
+    },
+    {
+        "id": "EC009",
+        "description": "Sparse (9 clues on the diagonal): astronomically many solutions; deadline stops the count",
+        "grid": "100000000020000000003000000000400000000050000000006000000000700000000080000000009",
+        "expected_status": "multiple",
+        "expected_solution_count": 16,
+        "count_type": "lower_bound",
+        "deadline_ms": 1000
+    },
+    {
+        "id": "EC010",
+        "description": "invalid_format: only 80 characters",
+        "grid": "53007000060019500009800006080006000340080300170002000606000028000041900500008007",
+        "expected_status": "invalid_format",
+        "expected_solution_count": null,
+        "count_type": "not_applicable"
+    },
+    {
+        "id": "EC011",
+        "description": "invalid_format: 82 characters",
+        "grid": "5300700006001950000980000608000600034008030017000200060600002800004190050000800790",
+        "expected_status": "invalid_format",
+        "expected_solution_count": null,
+        "count_type": "not_applicable"
+    },
+    {
+        "id": "EC012",
+        "description": "invalid_format: exactly 81 characters but contains unsupported character 'x'",
+        "grid": "5300700006001950000980000608000600034008x3001700020006060000280000419005000080079",
+        "expected_status": "invalid_format",
+        "expected_solution_count": null,
+        "count_type": "not_applicable"
+    },
+    {
+        "id": "EC013",
+        "description": "Duplicate 4 in column 3 only (rows 0 and 7; no row or box conflict)",
+        "grid": "530470000600195000098000060800060003400803001700020006060000280000419005000080079",
+        "expected_status": "invalid",
+        "expected_solution_count": null,
+        "count_type": "not_applicable"
+    },
+    {
+        "id": "EC014",
+        "description": "Duplicate 6 in box 0 only (cells r0c2 and r1c0; different row and column)",
+        "grid": "536070000600195000098000060800060003400803001700020006060000280000419005000080079",
+        "expected_status": "invalid",
+        "expected_solution_count": null,
+        "count_type": "not_applicable"
+    },
+    {
+        "id": "EC015",
+        "description": "Sparse puzzle (22 clues) written with '.' for empty cells; exactly one solution",
+        "grid": ".3..8...9.2..1..6.9......1.76.9.3........25.......1..7...75...41..............8.2",
+        "expected_status": "unique",
+        "expected_solution_count": 1,
+        "count_type": "exact"
+    },
+    {
+        "id": "EC016",
+        "description": "Exactly 2 solutions (classic puzzle with the clue at r2c7 removed)",
+        "grid": "530070000600195000098000000800060003400803001700020006060000280000419005000080079",
+        "expected_status": "multiple",
+        "expected_solution_count": 2,
+        "count_type": "exact"
+    },
+    {
+        "id": "EC017",
+        "description": "Exactly 16 solutions: one more than the 15 stored; count must continue past the storage limit",
+        "grid": "530070000600195000098000060000000003400803001700020006060000280000409005000000079",
+        "expected_status": "multiple",
+        "expected_solution_count": 16,
+        "count_type": "exact"
+    },
+    {
+        "id": "EC018",
+        "description": "Valid givens but cell r0c8 has no candidates (row 0 holds 1-8, column 8 holds 9)",
+        "grid": "123456780000000000000000000000000000000000009000000000000000000000000000000000000",
+        "expected_status": "unsolvable",
+        "expected_solution_count": 0,
+        "count_type": "exact"
+    },
+    {
+        "id": "EC019",
+        "description": "Timeout before any solution: brute-force-resistant puzzle; row-major search needs ~69 million nodes to reach its first solution",
+        "grid": "000000000000003085001020000000507000004000100090000000500000073002010000000040009",
+        "expected_status": "timeout",
+        "expected_solution_count": 0,
+        "count_type": "lower_bound",
+        "deadline_ms": 20,
+        "algorithms": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+        ],
+        "expected_by_algorithm": {
+            "A3": {
+                "expected_status": "timeout",
+                "expected_solution_count": 0,
+                "count_type": "lower_bound",
+                "acceptable_statuses": [
+                    "timeout",
+                    "unique"
+                ]
+            },
+            "A4": {
+                "expected_status": "timeout",
+                "expected_solution_count": 0,
+                "count_type": "lower_bound",
+                "acceptable_statuses": [
+                    "timeout",
+                    "unique"
+                ]
+            }
+        }
+    },
+    {
+        "id": "EC020",
+        "description": "Timeout after exactly one solution: first solution found after ~29 thousand nodes, but proving no other exists takes ~336 million nodes",
+        "grid": "000000000000003800000070000900000000400008702100700006701500090000020300052060010",
+        "expected_status": "timeout",
+        "expected_solution_count": 1,
+        "count_type": "lower_bound",
+        "deadline_ms": 1000,
+        "algorithms": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+        ],
+        "expected_by_algorithm": {
+            "A3": {
+                "expected_status": "unique",
+                "expected_solution_count": 1,
+                "count_type": "exact"
+            },
+            "A4": {
+                "expected_status": "unique",
+                "expected_solution_count": 1,
+                "count_type": "exact"
+            }
+        }
+    }
+]
