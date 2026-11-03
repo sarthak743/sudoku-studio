@@ -43,3 +43,45 @@ out/
 
 # Logs
 *.log
+
+# Stage reports (local development reports)
+**/STAGE_*_REPORT.md
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and editor
+.vscode/
+.idea/
+
+# Build artifacts
+build/
+dist/
+target/
+*.egg-info/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated benchmark outputs
+benchmarks/results/
