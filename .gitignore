@@ -71,6 +71,7 @@ venv/
 # Build artifacts
 build/
 dist/
+frontend/node_modules/
 target/
 *.egg-info/
 
